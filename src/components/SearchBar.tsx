@@ -8,24 +8,23 @@ import { categorySelect } from '../redux/reducer/categoryReducer'
 
 const SearchBar = () => {
 
-    const categoryValue = useAppSelector((state : RootState) => state.categoryReducer.category)
     const dispatch = useAppDispatch()
 
 
-  return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-    <SafeAreaView style={styles.main}>
-      <TextInput
-        onChangeText={(value)=>{
-                dispatch(categorySelect(value))
-        }}
+    return (
+        <GestureHandlerRootView style={{ flex: 1 }}>
+        <SafeAreaView style={styles.main}>
+        <TextInput
+            onChangeText={(value)=>{
+                    dispatch(categorySelect(value))
+            }}
 
-        style={styles.input}
-        placeholder='Lütfen isteğiniz ürünü yazınız.'
-      />
-    </SafeAreaView>
-  </GestureHandlerRootView>
-  )
+            style={styles.input}
+            placeholder='Lütfen isteğiniz ürünü yazınız.'
+        />
+        </SafeAreaView>
+    </GestureHandlerRootView>
+    )
 }
 
 export default SearchBar
