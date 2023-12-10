@@ -5,6 +5,7 @@ import { RootStackParamsList } from '../navigation/navigation';
 import { Feather } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
 import { AntDesign } from '@expo/vector-icons'; 
+import Dropdown from './Dropdown';
 
 
 type RestaurantDetailRouteProp = RouteProp<RootStackParamsList, 'RestaurantDetails'>;
@@ -16,14 +17,15 @@ type Props = {
 const RestaurantDetails = ({ route } : Props) => {
     const item = route.params.item
   return (
+    
     <View style={styles.main}>
     
       <View style={styles.container}>
         <Text style={styles.name} > {item.name} </Text>
         {
-          item.is_closed ? 
+          !item.is_closed ? 
          <View style={{flexDirection:'row', padding:5}}>
-            <Text style={{fontSize:18, color:'red'}} > Şu anda açık </Text>
+            <Text style={{fontSize:18, color:'green'}} > Şu anda açık </Text>
             <FontAwesome name="motorcycle" size={24} color="green" />
          </View>
          :
@@ -46,7 +48,11 @@ const RestaurantDetails = ({ route } : Props) => {
 
         <Text> {item.location.address1} {item.location.address2} </Text>
         <Text> {item.location.city} </Text>
-      
+        
+        <View style={styles.dropdown}>
+            <Dropdown/>
+        </View>
+
       </View>
     </View>
   )
@@ -56,11 +62,12 @@ export default RestaurantDetails
 
 const styles = StyleSheet.create({
     main:{
-        marginTop:20
+        marginTop:50,
+        
     },
     container:{
       justifyContent:'center',
-      alignItems:'center'
+      alignItems:'center',
     },
     address:{
       justifyContent:'center',
@@ -75,5 +82,11 @@ const styles = StyleSheet.create({
         width:350,
         height:300,
         borderRadius:5
+    },
+    dropdown:{
+      backgroundColor:'white',
+      width:'100%',
+      marginTop:100,
+      borderRadius:10
     }
 })

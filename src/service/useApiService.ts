@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 
-const BASE_URL = "https://api.yelp.com/v3/businesses/search?term=Toast&location=İstanbul&limit=50"
 
-const useApiService = () => {
+const useApiService = (category : string) => {
+    const BASE_URL = `https://api.yelp.com/v3/businesses/search?term=${category}&location=İstanbul&limit=50`
 
     const [result, setResult] = useState('')
 
@@ -16,7 +16,7 @@ const useApiService = () => {
             .then((response) => response.json())
             .then((data) => setResult(data))
             .catch((err) => console.error(err))
-    },[])
+    },[category])
 
     return result;
 
