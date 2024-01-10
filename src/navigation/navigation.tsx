@@ -3,12 +3,14 @@ import RestaurantDetails from '../features/restaurants/components/RestaurantDeta
 import RestaurantsScreen from '../features/restaurants/screens/RestaurantsScreen';
 import { Text, View } from 'react-native';
 import CartButton from '../features/restaurants/components/CartButton';
+import RegisterScreen from '../features/register/screens/RegisterScreen';
 
 export type RootStackParamsList = {
   Restaurants: undefined;
   RestaurantDetails: {
     item: any;
   };
+  RegisterScreen: undefined
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamsList>();
@@ -39,6 +41,10 @@ export const RootNavigator = () => {
         options={{ title: 'Sipariş ver' }}
         name="RestaurantDetails"
         component={RestaurantDetails}
+      />
+      <RootStack.Screen
+        name='RegisterScreen'
+        component={RegisterScreen}
       />
     </RootStack.Navigator>
   );

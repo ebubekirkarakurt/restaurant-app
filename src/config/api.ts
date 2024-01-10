@@ -1,1 +1,1 @@
-export const API_URL = "https://api.yelp.com/v3"
+export const API_URL = 'https://api.yelp.com/v3';
