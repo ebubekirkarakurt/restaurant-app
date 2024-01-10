@@ -1,4 +1,4 @@
-### Restaurant-App
+# Restaurant-App
 
 ## Video
 
