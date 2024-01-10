@@ -6,15 +6,11 @@ import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
-     <Provider store={store}>
-        <NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
         <RootNavigator />
-         <StatusBar
-        translucent={false}
-        backgroundColor="transparent"
-      />
-        </NavigationContainer>
-      </Provider>
-   
+        <StatusBar translucent={false} backgroundColor="transparent" />
+      </NavigationContainer>
+    </Provider>
   );
 }

@@ -3,17 +3,19 @@ import React from 'react';
 import RegisterForm from '../components/RegisterForm';
 import { LinearGradient } from 'expo-linear-gradient';
 import RegisterHeader from '../components/RegisterHeader';
+import ImgContainer from '../components/ImgContainer';
 
 type Props = {};
 
 const RegisterScreen = (props: Props) => {
   return (
-    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.main}>
-      <View >
-        <RegisterHeader/>
+    <View style={styles.main}>
+      <View>
+        <RegisterHeader />
       </View>
+      <ImgContainer />
       <RegisterForm />
-    </LinearGradient>
+    </View>
   );
 };
 
@@ -21,6 +23,6 @@ export default RegisterScreen;
 
 const styles = StyleSheet.create({
   main: {
-    flex:1
-  }
+    flex: 1,
+  },
 });

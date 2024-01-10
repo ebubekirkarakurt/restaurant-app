@@ -3,19 +3,18 @@ import React from 'react';
 
 type Props = {};
 
-const ResImage = (props: Props) => {
+const ImgContainer = (props: Props) => {
   return (
     <View style={styles.main}>
       <Image
         style={styles.img}
-        source={require('../../../../assets/restaurant.png')}
+        source={require('../../../../assets/restaurantlogin.png')}
       />
-      <Text style={styles.title}>Restauranım Uygulaması</Text>
     </View>
   );
 };
 
-export default ResImage;
+export default ImgContainer;
 
 const styles = StyleSheet.create({
   main: {
@@ -24,10 +23,5 @@ const styles = StyleSheet.create({
   img: {
     width: 250,
     height: 200,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: '600',
-    padding: 15,
   },
 });

@@ -12,7 +12,7 @@ export type RootStackParamsList = {
     item: any;
   };
   RegisterScreen: undefined;
-  LoginScreen: undefined
+  LoginScreen: undefined;
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamsList>();
@@ -22,16 +22,16 @@ export const RootNavigator = () => {
     <RootStack.Navigator>
       <RootStack.Screen
         options={{
-          headerShown: false
+          headerShown: false,
         }}
-        name='LoginScreen'
+        name="LoginScreen"
         component={LoginScreen}
       />
       <RootStack.Screen
         name="Restaurants"
         component={RestaurantsScreen}
         options={{
-          headerShown: false
+          headerShown: false,
         }}
       />
       <RootStack.Screen
@@ -40,10 +40,10 @@ export const RootNavigator = () => {
         component={RestaurantDetails}
       />
       <RootStack.Screen
-        name='RegisterScreen'
+        name="RegisterScreen"
         component={RegisterScreen}
         options={{
-          headerShown:false
+          headerShown: false,
         }}
       />
     </RootStack.Navigator>

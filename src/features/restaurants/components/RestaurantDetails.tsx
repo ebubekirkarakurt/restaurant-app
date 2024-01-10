@@ -64,7 +64,7 @@ export default RestaurantDetails;
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    marginTop:20
+    marginTop: 20,
   },
   container: {
     justifyContent: 'center',

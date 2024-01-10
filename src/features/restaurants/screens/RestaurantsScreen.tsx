@@ -16,7 +16,7 @@ const RestaurantsScreen = () => {
 
   return (
     <View style={styles.main}>
-      <ScreenHeader/>
+      <ScreenHeader />
       <ScrollView>
         <View style={styles.main}>
           <Restaurants data={result} price="₺" title="Ucuz Restoranlar" />

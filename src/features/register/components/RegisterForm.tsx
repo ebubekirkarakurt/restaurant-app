@@ -1,4 +1,11 @@
-import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  Alert,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -12,7 +19,6 @@ type FormData = {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;
   password: string;
   confirmPassword: string;
 };
@@ -41,17 +47,21 @@ const RegisterForm = (props: Props) => {
     resolver: zodResolver(schema),
   });
 
-    const navigation = useAppNavigation();
-    
+  const navigation = useAppNavigation();
+
   const onHandleSubmit = handleSubmit((data) => {
-      const { email, password } = data;
-        userDetail.push({ email, password });
-   Alert.alert('Giriş Başarılı', 'Lütfen yöndlendirilen sayfadan giriş yapınız..', [
-      {
-        text: 'Yönlendir',
-        onPress: () => navigation.goBack(),
-      }
-    ]);
+    const { email, password } = data;
+    userDetail.push({ email, password });
+    Alert.alert(
+      'Giriş Başarılı',
+      'Lütfen yöndlendirilen sayfadan giriş yapınız..',
+      [
+        {
+          text: 'Yönlendir',
+          onPress: () => navigation.goBack(),
+        },
+      ],
+    );
   });
 
   return (
@@ -133,32 +143,6 @@ const RegisterForm = (props: Props) => {
       )}
 
       <Controller
-        {...register('phone')}
-        name="phone"
-        control={control}
-        rules={{
-          required: 'Username required.',
-        }}
-        render={({ field: { onChange, onBlur, value } }) => {
-          return (
-            <View>
-              <TextInput
-                style={styles.input}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                value={value}
-                keyboardType="phone-pad"
-                placeholder="Please enter your phone number.."
-              />
-            </View>
-          );
-        }}
-      />
-      {errors.phone && (
-        <Text style={styles.errTxt}>{errors.phone.message}</Text>
-      )}
-
-      <Controller
         {...register('password')}
         name="password"
         control={control}
@@ -218,19 +202,19 @@ const RegisterForm = (props: Props) => {
 export default RegisterForm;
 
 const styles = StyleSheet.create({
-    main: {
-        margin: 20
-    },
+  main: {
+    margin: 20,
+  },
   input: {
     backgroundColor: 'lightgrey',
-    margin: 10,
+    margin: 5,
     padding: 10,
     borderRadius: 20,
     borderWidth: 0.5,
   },
   btn: {
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: 'gray',
     borderRadius: 10,
     padding: 10,
     margin: 30,

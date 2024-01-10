@@ -1,26 +1,36 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useAppNavigation } from '../../../navigation/utils/useAppNavigation';
 
-type Props = {}
+type Props = {};
 
 const RegisterHeader = (props: Props) => {
-  return (
-      <View style={styles.main}>
-        <Text style={styles.txt}>Kayıt Ol</Text>
-    </View>
-  )
-}
+  const navigation = useAppNavigation();
 
-export default RegisterHeader
+  return (
+    <View style={styles.main}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <MaterialCommunityIcons name="arrow-left" size={30} color="black" />
+      </TouchableOpacity>
+      <Text style={styles.txt}>Kayıt Ol</Text>
+    </View>
+  );
+};
+
+export default RegisterHeader;
 
 const styles = StyleSheet.create({
-    main: {
-        backgroundColor: 'transparent',
-        margin: 20
-    },
-    txt: {
-        fontSize: 30,
-        fontWeight:'600',
-        color:'white'
-    }
-})
+  main: {
+    backgroundColor: 'transparent',
+    margin: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  txt: {
+    fontSize: 25,
+    fontWeight: '600',
+    color: 'black',
+    paddingStart: 10,
+  },
+});
