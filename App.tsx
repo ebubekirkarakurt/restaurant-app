@@ -8,16 +8,15 @@ import {
   GestureHandlerRootView,
   NativeViewGestureHandler,
 } from 'react-native-gesture-handler';
+import LoginScreen from './src/features/login/screens/LoginScreen';
 
 export default function App() {
   return (
-    //  <Provider store={store}>
-    //     <NavigationContainer>
-    //         <RootNavigator />
-    //     </NavigationContainer>
-    //   </Provider>
-    <View>
-      <RegisterScreen></RegisterScreen>
-    </View>
+     <Provider store={store}>
+        <NavigationContainer>
+            <RootNavigator />
+        </NavigationContainer>
+      </Provider>
+   
   );
 }

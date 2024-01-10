@@ -3,6 +3,7 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { userDetail } from '../../../utils/userDetail';
 
 type Props = {};
 
@@ -40,8 +41,11 @@ const RegisterForm = (props: Props) => {
   });
 
   const onHandleSubmit = handleSubmit((data) => {
-    console.log(data);
-    alert('giris basarılı ana sayfaya yönlendiriliyrosunuz');
+      console.log(data);
+      const { email, password } = data;
+        userDetail.push({ email, password });
+    console.log("userDetaş: " , JSON.stringify(userDetail))
+    alert('kayıt işlemi basarılı ana sayfaya yönlendiriliyrosunuz');
   });
 
   return (
@@ -127,7 +131,7 @@ const RegisterForm = (props: Props) => {
         name="phone"
         control={control}
         rules={{
-          required: 'Phone number required.',
+          required: 'Username required.',
         }}
         render={({ field: { onChange, onBlur, value } }) => {
           return (
