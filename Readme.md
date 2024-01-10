@@ -4,4 +4,5 @@
 
 ## Video
 
-https://github.com/ebubekirkarakurt/restaurant-app/blob/master/assets/demo.mp4
+https://github.com/ebubekirkarakurt/restaurant-app/assets/114517935/d8dc63bf-583c-418d-8e6c-582f5a6de639
+
