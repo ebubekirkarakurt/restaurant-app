@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import { useAppNavigation } from '../navigation/utils/useAppNavigation';
+import { useAppNavigation } from '../../../navigation/utils/useAppNavigation';
 import { EvilIcons } from '@expo/vector-icons';
 
 type Props = {

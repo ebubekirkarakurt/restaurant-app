@@ -1,10 +1,10 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Restaurants from '../components/Restaurants';
-import useApiService from '../service/useApiService';
+import useApiService from '../../../service/useApiService';
 import SearchBar from '../components/SearchBar';
-import { useAppSelector } from '../hooks/hooks';
-import { RootState } from '../redux/store/store';
+import { useAppSelector } from '../../../hooks/hooks';
+import { RootState } from '../../../redux/store/store';
 
 const RestaurantsScreen = () => {
   const category = useAppSelector(

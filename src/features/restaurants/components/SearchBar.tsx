@@ -4,9 +4,9 @@ import {
   GestureHandlerRootView,
   TextInput,
 } from 'react-native-gesture-handler';
-import { useAppDispatch, useAppSelector } from '../hooks/hooks';
-import { RootState } from '../redux/store/store';
-import { categorySelect } from '../redux/reducer/categoryReducer';
+import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
+import { RootState } from '../../../redux/store/store';
+import { categorySelect } from '../../../redux/reducer/categoryReducer';
 
 const SearchBar = () => {
   const dispatch = useAppDispatch();

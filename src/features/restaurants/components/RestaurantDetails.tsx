@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { RouteProp } from '@react-navigation/native';
-import { RootStackParamsList } from '../navigation/navigation';
+import { RootStackParamsList } from '../../../navigation/navigation';
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';

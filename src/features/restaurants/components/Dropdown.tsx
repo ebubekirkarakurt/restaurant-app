@@ -1,8 +1,8 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
-import { useAppDispatch, useAppSelector } from '../hooks/hooks';
-import { addCart } from '../redux/reducer/cartReducer';
+import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
+import { addCart } from '../../../redux/reducer/cartReducer';
 
 type Props = {};
 

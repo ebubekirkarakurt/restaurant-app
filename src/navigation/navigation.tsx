@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import RestaurantDetails from '../components/RestaurantDetails';
-import RestaurantsScreen from '../screens/RestaurantsScreen';
+import RestaurantDetails from '../features/restaurants/components/RestaurantDetails';
+import RestaurantsScreen from '../features/restaurants/screens/RestaurantsScreen';
 import { Text, View } from 'react-native';
-import CartButton from '../components/CartButton';
+import CartButton from '../features/restaurants/components/CartButton';
 
 export type RootStackParamsList = {
   Restaurants: undefined;

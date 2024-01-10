@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { API_URL } from '../config/api';
 
 const useApiService = (category: string) => {
-  const BASE_URL = `https://api.yelp.com/v3/businesses/search?term=${category}&location=İstanbul&limit=50`;
+  const BASE_URL = `${API_URL}/businesses/search?term=${category}&location=İstanbul&limit=50`;
 
   const [result, setResult] = useState('');
 

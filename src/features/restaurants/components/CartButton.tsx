@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { useAppSelector } from '../hooks/hooks';
-import { RootState } from '../redux/store/store';
+import { useAppSelector } from '../../../hooks/hooks';
+import { RootState } from '../../../redux/store/store';
 
 type Props = {};
 
