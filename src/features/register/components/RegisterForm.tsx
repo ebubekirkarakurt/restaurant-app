@@ -1,9 +1,10 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userDetail } from '../../../utils/userDetail';
+import { useAppNavigation } from '../../../navigation/utils/useAppNavigation';
 
 type Props = {};
 
@@ -40,16 +41,21 @@ const RegisterForm = (props: Props) => {
     resolver: zodResolver(schema),
   });
 
+    const navigation = useAppNavigation();
+    
   const onHandleSubmit = handleSubmit((data) => {
-      console.log(data);
       const { email, password } = data;
         userDetail.push({ email, password });
-    console.log("userDetaş: " , JSON.stringify(userDetail))
-    alert('kayıt işlemi basarılı ana sayfaya yönlendiriliyrosunuz');
+   Alert.alert('Giriş Başarılı', 'Lütfen yöndlendirilen sayfadan giriş yapınız..', [
+      {
+        text: 'Yönlendir',
+        onPress: () => navigation.goBack(),
+      }
+    ]);
   });
 
   return (
-    <View>
+    <View style={styles.main}>
       <Controller
         {...register('firstName')}
         name="firstName"
@@ -212,6 +218,9 @@ const RegisterForm = (props: Props) => {
 export default RegisterForm;
 
 const styles = StyleSheet.create({
+    main: {
+        margin: 20
+    },
   input: {
     backgroundColor: 'lightgrey',
     margin: 10,

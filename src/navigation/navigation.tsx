@@ -31,20 +31,7 @@ export const RootNavigator = () => {
         name="Restaurants"
         component={RestaurantsScreen}
         options={{
-          title: 'My Restoran App',
-          headerTitle: () => (
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems:'center',
-                width: '90%',
-              }}
-            >
-              <Text>Restoranlar</Text>
-              <CartButton />
-            </View>
-          ),
+          headerShown: false
         }}
       />
       <RootStack.Screen
@@ -56,7 +43,7 @@ export const RootNavigator = () => {
         name='RegisterScreen'
         component={RegisterScreen}
         options={{
-          title: "Kayıt ol"
+          headerShown:false
         }}
       />
     </RootStack.Navigator>

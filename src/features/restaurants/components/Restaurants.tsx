@@ -1,6 +1,7 @@
 import {
   FlatList,
   Image,
+  Pressable,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -9,6 +10,7 @@ import {
 import React from 'react';
 import { useAppNavigation } from '../../../navigation/utils/useAppNavigation';
 import { EvilIcons } from '@expo/vector-icons';
+import { Surface } from 'react-native-paper';
 
 type Props = {
   data: any;
@@ -32,12 +34,12 @@ const Restaurants = ({ data, price, title }: Props) => {
             <View>
               {item.price == price ? (
                 item.image_url ? (
-                  <TouchableOpacity
+                  <Pressable
                     onPress={() =>
                       navigation.navigate('RestaurantDetails', { item: item })
                     }
                   >
-                    <View style={styles.container}>
+                    <Surface style={styles.container} elevation={2}>
                       <View style={styles.cart}>
                         <Text style={{ fontSize: 18, padding: 5 }}>
                           {' '}
@@ -71,8 +73,8 @@ const Restaurants = ({ data, price, title }: Props) => {
                           <Text> {item.categories[0].title} </Text>
                         </View>
                       </View>
-                    </View>
-                  </TouchableOpacity>
+                    </Surface>
+                  </Pressable>
                 ) : null
               ) : null}
             </View>
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   container: {
-    backgroundColor: 'lightgray',
+    backgroundColor: 'lightgrey',
     margin: 5,
     width: 300,
     height: 300,

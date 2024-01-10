@@ -100,9 +100,9 @@ export default LoginForm
 
 const styles = StyleSheet.create({
     main: {
-        height: '100%',
         alignItems: 'center',
-        justifyContent:'center'
+        justifyContent: 'center',
+        width: '100%'
     },
     inputContainer: {
         alignItems: 'center',
@@ -138,6 +138,6 @@ const styles = StyleSheet.create({
     txt: {
         fontSize: 12,
         fontWeight: '600',
-        color: 'blue',
+        color: 'white',
   }
 })

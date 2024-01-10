@@ -1,19 +1,13 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import React, { useState } from 'react';
-import {
-  GestureHandlerRootView,
-  TextInput,
-} from 'react-native-gesture-handler';
-import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { RootState } from '../../../redux/store/store';
+import { SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import React from 'react';
+import { useAppDispatch } from '../../../hooks/hooks';
 import { categorySelect } from '../../../redux/reducer/categoryReducer';
 
 const SearchBar = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaView style={styles.main}>
+      <View style={styles.main}>
         <TextInput
           onChangeText={(value) => {
             dispatch(categorySelect(value));
@@ -21,8 +15,7 @@ const SearchBar = () => {
           style={styles.input}
           placeholder="Lütfen isteğiniz ürünü yazınız."
         />
-      </SafeAreaView>
-    </GestureHandlerRootView>
+      </View>
   );
 };
 
@@ -31,17 +24,16 @@ export default SearchBar;
 const styles = StyleSheet.create({
   main: {
     margin: 10,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    flex:1
   },
   input: {
-    backgroundColor: '#F5F5F5',
-    width: 300,
-    height: 50,
-    margin: 10,
+    backgroundColor: 'lightgray',
     borderRadius: 10,
     padding: 10,
+    width: '100%'
   },
 });

@@ -5,6 +5,8 @@ import useApiService from '../../../service/useApiService';
 import SearchBar from '../components/SearchBar';
 import { useAppSelector } from '../../../hooks/hooks';
 import { RootState } from '../../../redux/store/store';
+import ScreenHeader from '../components/ScreenHeader';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const RestaurantsScreen = () => {
   const category = useAppSelector(
@@ -13,10 +15,10 @@ const RestaurantsScreen = () => {
   const result = useApiService(category);
 
   return (
-    <View>
+    <View style={styles.main}>
+      <ScreenHeader/>
       <ScrollView>
         <View style={styles.main}>
-          <SearchBar />
           <Restaurants data={result} price="₺" title="Ucuz Restoranlar" />
           <Restaurants data={result} price="₺₺" title="Uygun Restoranlar" />
           <Restaurants data={result} price="₺₺₺" title="Pahalı Restoranlar" />
