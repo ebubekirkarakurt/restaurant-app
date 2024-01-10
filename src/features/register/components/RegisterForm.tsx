@@ -29,7 +29,6 @@ const RegisterForm = (props: Props) => {
       firstName: z.string(),
       lastName: z.string(),
       email: z.string().email(),
-      phone: z.string(),
       password: z.string(),
       confirmPassword: z.string(),
     })
