@@ -17,6 +17,11 @@ https://github.com/ebubekirkarakurt/restaurant-app/assets/114517935/d8dc63bf-583
 | React Hook Form | 7.49.3 |  It's for managing forms in React applications|
 | Zod | 3.22.4 | Content |
 
+
+## Demo Login Informations:
+    - email : test
+    - password: test
+
 ## Installation
 
 Install my-project with npm
