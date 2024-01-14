@@ -15,7 +15,7 @@ https://github.com/ebubekirkarakurt/restaurant-app/assets/114517935/d8dc63bf-583
 | Linear Gradient | 12.3 | Library for color design|
 | Prettier  | 3.1.1  | Code formatting tool  |
 | React Hook Form | 7.49.3 |  It's for managing forms in React applications|
-| Zod | 3.22.4 | Content |
+| Zod | 3.22.4 | TypeScript-first schema declaration and validation library |
 
 
 ## Demo Login Informations:
